@@ -1,5 +1,5 @@
 let videoIndex = 0;
-const videos = ['veg.mp4', 'nonveg.mp4', 'dessert.mp4']; // List of video files
+const videos = ['veg.mp4', 'nonveg.mp4', 'dessert (1).mp4']; // List of video files
 
 const videoPlayer = document.getElementById('videoPlayer');
 const searchBar = document.getElementById('searchBar');
