@@ -14,6 +14,11 @@ document.getElementById('nextButton').addEventListener('click', () => {
     loadVideo();
 });
 
+document.getElementById('randomButton').addEventListener('click', () => {
+    videoIndex = Math.floor(Math.random() * videos.length);
+    loadVideo();
+});
+
 document.getElementById('downloadButton').addEventListener('click', () => {
     const currentVideo = videos[videoIndex];
     const link = document.createElement('a');
@@ -22,6 +27,21 @@ document.getElementById('downloadButton').addEventListener('click', () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+});
+
+document.getElementById('shareButton').addEventListener('click', () => {
+    const currentVideo = videos[videoIndex];
+    const shareUrl = `${window.location.href.split('?')[0]}?video=${currentVideo}`;
+
+    if (navigator.share) {
+        navigator.share({
+            title: 'Recipe Video',
+            text: 'Check out this recipe video!',
+            url: shareUrl
+        }).catch((error) => console.error('Error sharing', error));
+    } else {
+        alert(`Web Share API not supported on this browser. Share this link: ${shareUrl}`);
+    }
 });
 
 searchBar.addEventListener('input', () => {
