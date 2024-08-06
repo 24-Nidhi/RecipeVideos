@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-image: url('/images/background.png'); /* Path to your background image */
+    background-image: url('background.png'); /* Path to your background image */
     background-size: cover; /* Make the image cover the entire background */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
